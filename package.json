@@ -1,0 +1,22 @@
+{
+  "name": "playwright-framework",
+  "version": "1.0.0",
+  "description": "Playwright and TypeScript end-to-end test automation framework",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/talhacodex04/playwright-framework.git"
+  },
+  "keywords": [],
+  "author": "talhacodex04",
+  "license": "MIT",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/talhacodex04/playwright-framework/issues"
+  },
+  "homepage": "https://github.com/talhacodex04/playwright-framework#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.65.1",
+    "@types/node": "^26.6.6"
+  }
+}
