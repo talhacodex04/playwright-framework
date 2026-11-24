@@ -10,5 +10,6 @@ test('adding a product shows it in the cart', async ({ page }) => {
     await expect(page.getByTestId('shopping-cart-badge')).toHaveText('1');
     await page.getByTestId('shopping-cart-link').click();
     await expect(page).toHaveURL(/cart\.html/);
+    await expect(page.getByTestId('title')).toHaveText('Your Cart');
     await expect(page.getByTestId('inventory-item-name')).toContainText('Sauce Labs Backpack');
 });
