@@ -25,3 +25,15 @@ test('locked out user cannot log in', async ({ page }) => {
   await expect(page.getByTestId('error')).toHaveText(/locked out/);
   await expect(page).not.toHaveURL(/inventory\.html/);
 });
+
+test('user can log out and returns to the login page', async ({ page }) => {
+  await page.goto('/');
+  await page.getByTestId('username').fill('standard_user');
+  await page.getByTestId('password').fill('secret_sauce');
+  await page.getByTestId('login-button').click();
+  await expect(page).toHaveURL(/inventory\.html/);
+  await page.getByRole('button', { name: 'Open Menu' }).click();
+  await page.getByTestId('logout-sidebar-link').click();
+  await expect(page.getByTestId('login-button')).toBeVisible();
+  await expect(page).not.toHaveURL(/inventory\.html/);
+});
